@@ -94,10 +94,15 @@ namespace Hobbies_DB
                 SqlConnection conn = new SqlConnection(sqlConnection);
                 conn.Open();
                 string query = $"DELETE FROM Countries where Country = '{country_text.Text}'";
+                string query1 = $"DELETE FROM Towns where Countries_ID = '{country_id.Text}'";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
 
+                SqlCommand cmd = new SqlCommand(query1, conn);
                 cmd.ExecuteNonQuery();
+
+                SqlCommand cmd1 = new SqlCommand(query, conn);
+                cmd1.ExecuteNonQuery();
+
                 MessageBox.Show($"Deleted {country_text.Text} from Countries");
 
             }
