@@ -16,6 +16,7 @@ namespace Hobbies_DB
     public partial class Main : Form
     {
         List<string> Countries = new List<string>();
+        private LogIn logIn;
 
         public Main()
         {
@@ -24,6 +25,7 @@ namespace Hobbies_DB
 
             foreach(string s in Countries)
             countries_combobox.Items.Add(s);
+           
         }
 
         private void GetCountries()
