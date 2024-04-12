@@ -43,6 +43,10 @@
             this.login_button = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.browse_button = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.save_photo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,11 +161,43 @@
             this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // browse_button
+            // 
+            this.browse_button.Location = new System.Drawing.Point(514, 249);
+            this.browse_button.Name = "browse_button";
+            this.browse_button.Size = new System.Drawing.Size(82, 35);
+            this.browse_button.TabIndex = 14;
+            this.browse_button.Text = "Browse";
+            this.browse_button.UseVisualStyleBackColor = true;
+            this.browse_button.Click += new System.EventHandler(this.browse_button_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(398, 192);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(110, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // save_photo
+            // 
+            this.save_photo.Location = new System.Drawing.Point(514, 218);
+            this.save_photo.Name = "save_photo";
+            this.save_photo.Size = new System.Drawing.Size(82, 35);
+            this.save_photo.TabIndex = 16;
+            this.save_photo.Text = "Save";
+            this.save_photo.UseVisualStyleBackColor = true;
+            this.save_photo.Click += new System.EventHandler(this.save_photo_Click);
+            // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.save_photo);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.browse_button);
             this.Controls.Add(this.login_button);
             this.Controls.Add(this.register_button);
             this.Controls.Add(this.password);
@@ -176,6 +212,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SignIn";
             this.Text = "SignIn";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +234,8 @@
         private System.Windows.Forms.Button login_button;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ImageList imageList2;
+        private System.Windows.Forms.Button browse_button;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button save_photo;
     }
 }

@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -148,6 +150,35 @@ namespace Hobbies_DB
 
                 return Convert.ToBase64String(hashedPasswordWithSalt);
             }
+        }
+
+        private void browse_button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(openFileDialog.FileName);
+            }
+        }
+        private byte[] saveImage()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            pictureBox1.Image.Save(memoryStream, pictureBox1.Image.RawFormat);
+            return memoryStream.GetBuffer();
+        }
+
+        private void save_photo_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection(sqlConnection);
+            conn.Open();
+            string query = $"Update SignCred Set Image=@photo where Username =@Username";
+            
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@photo", saveImage());
+            cmd.Parameters.AddWithValue("@Username", username.Text);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }
