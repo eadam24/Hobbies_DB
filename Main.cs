@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -50,6 +51,29 @@ namespace Hobbies_DB
                 }
                 reader.Close();
             }
+
+            //if (sqlConnection.State == ConnectionState.Closed)
+            //    sqlConnection.Open();
+
+            //string Query1 = $"SELECT Date FROM SignCred WHERE Username=@Username";
+
+            //SqlCommand cmd = new SqlCommand(Query1, sqlConnection);
+
+            //cmd.CommandType = CommandType.Text;
+            //cmd.Parameters.AddWithValue("@Username", username_text.Text);
+
+            //using (SqlDataReader oReader = cmd.ExecuteReader())
+            //{
+            //    while (oReader.Read())
+            //    {
+            //        String date = (String)oReader["Date"];
+
+
+            //        byte[] bytes = Encoding.UTF8.GetBytes(date);
+            //        hashed = HashPassword(password_text.Text, bytes);
+            //    }
+            //    oReader.Close();
+            //}
             catch (Exception ex)
             {
 
@@ -109,6 +133,11 @@ namespace Hobbies_DB
 
             adminWindow.Show();
             this.Hide();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

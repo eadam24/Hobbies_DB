@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@
             this.password = new System.Windows.Forms.TextBox();
             this.register_button = new System.Windows.Forms.Button();
             this.login_button = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +66,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(373, 122);
+            this.label3.Location = new System.Drawing.Point(373, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 2;
@@ -81,7 +84,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(374, 173);
+            this.label5.Location = new System.Drawing.Point(374, 147);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 20);
             this.label5.TabIndex = 4;
@@ -110,14 +113,14 @@
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(472, 122);
+            this.username.Location = new System.Drawing.Point(472, 96);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(100, 26);
             this.username.TabIndex = 8;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(472, 167);
+            this.password.Location = new System.Drawing.Point(472, 141);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(100, 26);
             this.password.TabIndex = 9;
@@ -142,6 +145,18 @@
             this.login_button.UseVisualStyleBackColor = true;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageList2
+            // 
+            this.imageList2.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList2.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -161,7 +176,6 @@
             this.Controls.Add(this.label1);
             this.Name = "SignIn";
             this.Text = "SignIn";
-            this.Load += new System.EventHandler(this.SignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +195,7 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button register_button;
         private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }

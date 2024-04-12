@@ -62,13 +62,11 @@ namespace Hobbies_DB
                         {
                             while (oReader.Read())
                             {
-                                DateTime date = (DateTime)oReader["Date"];
+                                String date = (String)oReader["Date"];
                                 
 
-                                string dateString = date.ToString();
-                                byte[] bytes = Encoding.UTF8.GetBytes(dateString);
+                                byte[] bytes = Encoding.UTF8.GetBytes(date);
                                 hashed = HashPassword(password_text.Text, bytes);
-                                MessageBox.Show(dateString);
                             }
                             oReader.Close();
 
@@ -80,7 +78,6 @@ namespace Hobbies_DB
                                 cmd.Parameters.AddWithValue("@Username", username_text.Text);
 
                                 cmd.Parameters.AddWithValue("@Password", hashed);
-                            MessageBox.Show(hashed);
 
                                 int count = Convert.ToInt32(cmd.ExecuteScalar());
                                 if (count == 1)
@@ -213,5 +210,7 @@ namespace Hobbies_DB
                 return Convert.ToBase64String(hashedPasswordWithSalt);
             }
         }
+
+ 
     }
     }

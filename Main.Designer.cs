@@ -70,6 +70,7 @@
             this.Controls.Add(this.countries_combobox);
             this.Name = "Main";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
 
         }

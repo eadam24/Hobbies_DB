@@ -24,10 +24,6 @@ namespace Hobbies_DB
             InitializeComponent();
         }
 
-        private void SignIn_Load(object sender, EventArgs e)
-        {
-
-        }
         private void register_button_Click(object sender, EventArgs e)
         {
             string date = System.DateTime.Now.ToString();
